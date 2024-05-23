@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/aeolun/react-diff-viewer-continued/compare/v4.0.2...v4.0.3) (2024-05-23)
+
+
+### Reverts
+
+* Revert "refactoring attempt" ([6a9789b](https://github.com/aeolun/react-diff-viewer-continued/commit/6a9789b0af0221bf32be11d1af9d4db3337008f4))
+
 ## [4.0.2](https://github.com/aeolun/react-diff-viewer-continued/compare/v4.0.1...v4.0.2) (2024-02-14)
 
 
