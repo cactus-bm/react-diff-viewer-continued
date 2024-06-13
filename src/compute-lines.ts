@@ -129,11 +129,14 @@ const computeLineInformation = (
   lineCompareMethod: DiffMethod | ((oldStr: string, newStr: string) => diff.Change[]) = DiffMethod.CHARS,
   linesOffset: number = 0,
   showLines: string[] = [],
+  lineDiffMethod: null | ((oldStr: string, newStr: string) => diff.Change[]) = null,
 ): ComputedLineInformation => {
   let diffArray: Diff.Change[] = [];
 
   // Use diffLines for strings, and diffJson for objects...
-  if (typeof oldString === 'string' && typeof newString === 'string') {
+  if (lineDiffMethod) {
+    diffArray = lineDiffMethod(oldString as string, newString as string)
+  } else if (typeof oldString === 'string' && typeof newString === 'string') {
     diffArray = diff.diffLines(
       oldString,
       newString,
